@@ -1,0 +1,104 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins.scss' as *;
+
+.page {
+    position: absolute;
+    // backdrop-filter: blur(20px);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    pointer-events: none;
+    overflow: hidden;
+    align-items: end;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: $spaceLarge;
+    
+    &__box {
+        background: linear-gradient(140deg, $color1-solid 60%, $color2-solid 125%);
+        min-width: 750px;
+        padding: $spaceLarge;
+        pointer-events: all;
+        margin-bottom: $spaceExtraLarge;
+        position: relative;
+        box-shadow: 32px 32px 100px 0 $color2-solid;
+
+
+        & > section >:first-child {
+            width: calc(100% - 160px);
+        }
+
+        @media (width <= $responsiveMedium) {
+            top: $spaceMedium;
+            left: $spaceMedium;
+            min-width: 600px;
+
+            & > section >:first-child {
+                width: calc(100% - 160px);
+            }
+        } 
+
+        @media (width <= $responsiveSmall) {
+            top: $spaceMedium;
+            left: $spaceMedium;
+            min-width: 320px;
+
+            & > section >:first-child {
+                width: calc(100% - 60px);
+            }
+        } 
+
+    }
+
+    &__close {
+        background: $color2-solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        gap: 12px;
+        padding-top: 4px;
+        padding-left: $spaceMedium;
+        padding-right: $spaceMedium;
+        right: calc( $spaceMedium + $spaceExtraSmall );
+        top: calc( $spaceMedium + $spaceExtraSmall );
+        position: absolute;
+        clip-path: polygon(2% 34%, 0 3%, 15% 0%, 53% 2%, 76% 0, 100% 2%, 98% 85%, 98% 100%, 67% 98%, 3% 100%, 0% 85%);
+        
+        &:hover {
+            background: $color3-solid;
+        }
+        
+        &Btn {
+            width: 24px;
+            margin-bottom: 6px;
+            user-select: none;
+        }
+        
+        &Text {
+            user-select: none;
+            color: $color1-solid;
+            @include button;
+        }
+
+        @media (width <= $responsiveSmall) {
+            zoom: .9;
+            height: 55px;
+            &Text {
+                display: none;
+            }
+        } 
+    }
+
+    &__drag {
+        position: absolute;
+        bottom: $spaceMedium;
+        right: $spaceMedium;
+        height: 30px;
+        user-select: none;
+        pointer-events: none;
+    }
+}

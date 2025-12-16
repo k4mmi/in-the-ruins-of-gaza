@@ -1,0 +1,23 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins.scss' as *;
+
+.navButton {
+    height: 80px;
+    & a {
+        clip-path: polygon(0 9%, 16% 0, 36% 0, 59% 4%, 85% 0, 98% 10%, 100% 85%, 95% 98%, 68% 96%, 15% 100%, 6% 98%, 3% 93%);
+        color: $color1-solid;
+        background: $color2-solid;
+        height: 100%;
+        display: flex;
+        padding-left: $spaceExtraLarge;
+        padding-right: $spaceExtraLarge;
+        padding-top: $spaceExtraSmall;
+        justify-content: center;
+        align-items: center;
+        @include button;
+    }
+
+    & a:hover {
+        background: $color3-solid;
+    }
+}

@@ -1,0 +1,12 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins.scss' as *;
+
+.sounds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    display: flex;
+    opacity: .7;
+    margin-left: 25vw;
+}

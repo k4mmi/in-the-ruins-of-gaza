@@ -1,0 +1,7 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins.scss' as *;
+
+.sectionTitle {
+    @include sectionTitle;
+    max-width: 600px;
+}

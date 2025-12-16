@@ -1,0 +1,7 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+@font-face {
+    font-family: "ManifontGroteskBook";
+    src: url(../fonts/ManifontGrotesk/ManifontGroteskBook-webfont.woff);
+}

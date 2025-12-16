@@ -1,0 +1,42 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins.scss' as *;
+
+.screenFilter {
+    width: 100%;
+    height: 100%;
+    z-index: 10000000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: noiseAnimation 500ms infinite steps(2);
+    pointer-events: none;
+    
+    @keyframes noiseAnimation {
+        0%  {background-position: -270px -50px;}
+        25% {background-position: 100px 300px;}
+        50% {background-position: -270px -50px;}
+        75% {background-position: 50px -80px;}
+    }
+
+    @keyframes noiseAnimation {
+        0% {background-position: 0 0;}
+        15% {background-position: 100px 300px;}
+        25% {background-position: -270px -50px;}
+        35% {background-position: 150px -270px;}
+        50% {background-position: -220px -150px;}
+        75% {background-position: 350px 220px;}
+        80% {background-position: -300px -150px;}
+        100% {background-position: 50px -80px;}
+    }
+    
+    &-1 {
+        background: url(/assets/new_noise2.png) 0 0 / 300px 300px;
+        mix-blend-mode: color-dodge;
+        opacity: .4;
+    }
+    &-2 {
+        background: url(/assets/new_noise2.png) 0 0 / 300px 300px;
+        mix-blend-mode: color-burn;
+        opacity: .4;
+    }
+}

@@ -1,0 +1,18 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins.scss' as *;
+
+.soundsButton {
+    height: 80px;
+    width: 80px;
+    clip-path: polygon(0 9%, 16% 0, 36% 0, 59% 4%, 85% 0, 98% 10%, 100% 85%, 95% 98%, 68% 96%, 15% 100%, 6% 98%, 3% 93%);
+    color: $color1-solid;
+    background: $color2-solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include button;
+
+    &:hover {
+        background: $color3-solid;
+    }
+}
