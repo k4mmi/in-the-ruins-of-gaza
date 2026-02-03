@@ -1,0 +1,32 @@
+////// BREAKPOINTS //////
+$responsiveExtraSmall: 350px;
+$responsiveSmall: 576px;
+$responsiveMedium: 768px;
+$responsiveLarge: 992px;
+$responsiveExtraLarge: 1200px;
+
+////// SPACES //////
+$spaceExtraSmall: 4px;
+$spaceSmall: 8px;
+$spaceMedium: 16px;
+$spaceLarge: 32px;
+$spaceExtraLarge: 64px;
+
+$color1-solid: #95938D;
+$color2-solid: #1A1427;
+$color3-solid: #C81932;
+$color1alt-solid: #A1A099;
+$color2alt-solid: #15101f;
+
+// $gradient1: linear-gradient(#95938D, #524F52);
+$gradient1: linear-gradient(#95938D, #1A1427), #1A1427;
+
+$layerMap: 100;
+
+$animationSpeedExtraSlow: 700ms;
+$animationSpeedSlow: 300ms;
+$animationSpeedNormal: 150ms;
+$animationSpeedFast: 80ms;
+$animationSpeedExtraFast: 35ms;
+
+$borderSize: 3px;

@@ -1,0 +1,48 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins.scss' as *;
+
+.scrap {
+    width: fit-content;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    pointer-events: all;
+    margin: -100%;
+    
+    &__path {
+        // firefox svg render fix
+        animation: renderFix 1000ms infinite forwards;
+        transition: 1000ms scale;
+        
+        @keyframes renderFix {
+            90% { transform: translateY(0px); }
+            100% { transform: translateY(0.0001px); }
+        }
+
+        @media (width <= $responsiveMedium) {
+            scale: .8;
+        }  
+        
+        @media (width <= $responsiveSmall) {
+            scale: .6;
+        }  
+    }
+
+    &__hide {
+        &-1 {
+            @media (width <= $responsiveLarge) {
+                display: none;
+            }    
+        }
+        &-2 {
+            @media (width <= $responsiveMedium) {
+                display: none;
+            }    
+        }
+        &-3 {
+            @media (width <= $responsiveSmall) {
+                display: none;
+            }           
+        }
+    }
+}

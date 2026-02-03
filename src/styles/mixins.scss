@@ -1,0 +1,126 @@
+@use './variables' as *;
+
+@mixin title {
+    font-family: "ManifontGroteskBook";
+    font-size: 140px;
+    line-height: 0.9;
+    transition: font-size $animationSpeedNormal;
+
+    @media (width <= $responsiveExtraLarge) {
+        font-size: 130px;
+    }
+
+    @media (width <= $responsiveLarge) {
+        font-size: 110px;
+    }
+
+    @media (width <= $responsiveMedium) {
+        font-size: 90px;
+    }
+
+    @media (width <= $responsiveSmall) {
+        font-size: 16vw;
+    }
+}
+
+@mixin titleButton {
+    font-family: "ManifontGroteskBook";
+    font-size: 42px;
+    line-height: 0.9;
+    
+    &:hover {
+        color: $color3-solid;
+    }
+}
+
+@mixin button {
+    font-family: "ManifontGroteskBook";
+    font-size: 32px;
+    line-height: 0.9;
+}
+
+@mixin sectionTitle {
+    font-family: "ManifontGroteskBook";
+    font-size: 50px;
+    line-height: 1;
+    color: $color2-solid;
+    margin-bottom: $spaceLarge;
+
+    & * {
+        font-family: "ManifontGroteskBook";
+        font-size: 50px;
+        line-height: 1;
+        color: $color2-solid;
+        margin-bottom: $spaceLarge;
+    }
+
+    @media (width <= $responsiveMedium) {
+        margin-bottom: $spaceMedium;
+        font-size: 40px;
+        & * { font-size: 40px; margin-bottom: $spaceMedium; }
+    } 
+
+    @media (width <= $responsiveSmall) {
+        font-size: 28px;
+        & * { font-size: 28px; }
+    }
+}
+
+@mixin sectionSmall {
+    font-family: "ManifontGroteskBook";
+    font-size: 22px;
+    line-height: 1;
+    color: $color2-solid;
+
+   & * {
+        font-family: "ManifontGroteskBook";
+        font-size: 22px;
+        line-height: 1;
+        color: $color2-solid;
+
+    }
+
+    a {
+        text-decoration: underline 1px;
+
+        &:hover {
+            color: $color3-solid;
+        }
+    }
+
+    @media (width <= $responsiveMedium) {
+        margin-bottom: $spaceMedium;
+        font-size: 20px;
+        & * { font-size: 20px; margin-bottom: $spaceMedium; }
+    } 
+
+    @media (width <= $responsiveSmall) {
+        font-size: 14px;
+        & * { font-size: 14px; }
+    }
+}
+
+@mixin sectionMainNumer {
+    font-family: "ManifontGroteskBook";
+    font-size: 160px;
+    line-height: 1;
+    color: $color2-solid;
+
+    & * {
+        font-family: "ManifontGroteskBook";
+        font-size: 160px;
+        line-height: 1;
+        color: $color2-solid;
+    }
+
+    @media (width <= $responsiveMedium) {
+        font-size: 140px;
+        line-height: .9;
+        & * { font-size: 140px; line-height: .9; }
+    } 
+
+    @media (width <= $responsiveSmall) {
+        font-size: 80px;
+        & * { font-size: 80px; }
+    }
+}

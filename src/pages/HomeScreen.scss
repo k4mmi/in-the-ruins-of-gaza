@@ -1,0 +1,54 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins.scss' as *;
+
+.homescreen {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $gradient1;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    z-index: 100000000;
+    justify-content: center;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        @include title;
+        text-align: center;
+        color: $color2-solid;
+        margin-bottom: 30px;
+        user-select: none;
+    }
+
+    &__scrapContainer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: $spaceMedium;
+    }
+
+    &__source {
+        @include sectionSmall;
+        margin-top: $spaceMedium;
+        text-decoration: underline;
+        &:hover {
+            color: $color3-solid
+        }
+    }
+}

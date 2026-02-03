@@ -1,0 +1,22 @@
+@use './styles/variables' as *;
+@use './styles/mixins.scss' as *;
+
+.animationWall {
+    position: absolute;
+    background: $gradient1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    pointer-events: none;
+    animation: animationWall forwards 500ms 1000ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include title;
+    color: $color2-solid;
+
+    @keyframes animationWall {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(100%); }
+    }
+}
