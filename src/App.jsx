@@ -1,27 +1,41 @@
+import { BrowserRouter, Link, useLocation, Route, Routes } from 'react-router'
+import { Map } from './pages/Map'
+import { Page } from './components/Page'
+import { Buildings } from './pages/Buildings'
+import { Deaths } from './pages/Deaths'
+import { Injuries } from './pages/Injuries'
+import { Hunger } from './pages/Hunger'
+import { HomeScreen } from './pages/HomeScreen'
+import { AnimatePresence } from 'motion/react'
+import { ScreenFilter } from './components/ScreenFilter'
+import { Sounds } from './components/Sounds'
 import "./styles/style.scss"
-import { Header } from "./components/Header"
-import { Home } from "./pages/Home"
-import { NotFound } from "./pages/NotFound"
-import { Game } from "./pages/Game"
-import { Routes, Route } from "react-router"
-import { Footer } from "./components/Footer"
-import { ScrollUp } from "./components/ScrollUp"
-import { Result } from "./pages/Result"
+import "./App.scss"
 
 export function App() {
   return (
     <>
-      {/* NAV */}
-      <Header/>
-      {/* Router */}
-      <Routes>
-        <Route path="/" element={<><Home/><Footer/></>}/>
-        <Route path="/game" element={<Game/>}/>
-        <Route path="/result" element={<Result/>}/>
-        {/* <Route path="/test" element={<Test/>}/> */}
-        <Route path="/*" element={<><NotFound/><Footer/></>}/>
-      </Routes>
-      <ScrollUp/>
+      <Sounds/>
+      <Map/>
+      {/* <div className='animationWall'>Loading</div> */}
+      <RouterComponent/>
+      <ScreenFilter/>
     </>
   )
+}
+
+function RouterComponent() {
+  const location = useLocation();
+  return (
+        <AnimatePresence mode='wait'>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<HomeScreen/>}/>
+            <Route path="map" element={<></>}/>
+            <Route path="homes" element={<Page><Buildings/></Page>}/>
+            <Route path="deaths" element={<Page><Deaths/></Page>}/>
+            <Route path="injuries" element={<Page><Injuries/></Page>}/>
+            <Route path="hunger" element={<Page><Hunger/></Page>}/>
+          </Routes>
+        </AnimatePresence>
+  );
 }

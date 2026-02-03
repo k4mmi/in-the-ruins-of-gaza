@@ -27,7 +27,7 @@ export function Map() {
         <div className="map" ref={root} container='scrapContainerMap'>
             <MapContent/>
             <div className="map__back">
-                <NavButton to="/"><img className="map__backIcon" src='/assets/back.svg'/>Back</NavButton>
+                <NavButton to="/"><img className="map__backIcon" src='./assets/back.svg'/>Back</NavButton>
             </div>
             <div className="map__sounds">
                 <SoundsButton/>

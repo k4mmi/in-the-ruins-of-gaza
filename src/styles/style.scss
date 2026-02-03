@@ -7,40 +7,34 @@
     box-sizing: border-box;
     line-height: 1.2; // You will be glad because of this default line hight... you always forget it
     scrollbar-width: thin;
-    scrollbar-color: $color1-solid $color3-solid;
-    color: $color1-solid;
-    @include fontRegular;
-    scroll-behavior: smooth;
+    user-select: none; // Disable selection of all elems cuz it piss me off >:(
 }
 
-html,
-body {
-    // overscroll-behavior: none;
-    background: $color3-solid;
+html, body {
+    overscroll-behavior: none;
     height: 100%;
-    width: 100%;
+    background: $color2alt-solid;
 }
 
-body {
-    position: absolute;
-    top: 0;
+#root {
+    height: 100%;
+    background: $gradient1;
 }
 
-button,
-a {
+button, a {
     // Let's make clear what can user click
     cursor: pointer;
     transition: $animationSpeedExtraFast scale;
-    user-select: none;
 
-    &:hover {
-        scale: 0.98;
+
+    &:active {
+        scale: .9; // all BTNs/As animation
     }
 }
 
 ::selection {
-    color: $color1-solid;
-    background: $color4-solid;
+    color: $color2-solid;
+    background: $color1-solid;
 }
 
 // Hide goofy debug color alts of images 
@@ -55,15 +49,6 @@ hr {
     margin-bottom: $spaceLarge;
 }
 
-input,
-textarea,
-button,
-select,
-a {
+input, textarea, button, select, a {
     -webkit-tap-highlight-color: transparent;
-}
-
-#root {
-    margin-top: $header;
-    height: calc(100% - $header);
 }

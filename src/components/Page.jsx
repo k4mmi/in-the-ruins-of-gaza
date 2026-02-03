@@ -34,8 +34,8 @@ export function Page({ children }) {
         <PageAnimation2 className="page" id="page">
             <div className="page__box" ref={root}>
                 {children}
-                <Link to="/map" className='page__close'><img className="page__closeBtn" src='/assets/close.svg'/><div className='page__closeText'>Close</div></Link>
-                <img className="page__drag" src="/assets/drag.svg" alt="You can move the window" />
+                <Link to="/map" className='page__close'><img className="page__closeBtn" src='./assets/close.svg'/><div className='page__closeText'>Close</div></Link>
+                <img className="page__drag" src="./assets/drag.svg" alt="You can move the window" />
             </div>
         </PageAnimation2>
     );

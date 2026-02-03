@@ -1,154 +1,126 @@
 @use './variables' as *;
 
-@mixin shadowFrame {
-    border-radius: $borderRadius;
-    border: $borderSize solid $color1-solid;
-    box-shadow: 10px 12px 0 0.5px $color1-solid;
-    transition: $animationSpeedFast;
-}
+@mixin title {
+    font-family: "ManifontGroteskBook";
+    font-size: 140px;
+    line-height: 0.9;
+    transition: font-size $animationSpeedNormal;
 
-@mixin shadowFrameButton {
-    &:active {
-        border-radius: $borderRadius;
-        border: $borderSize solid $color1-solid;
-        box-shadow: 0px 0px 0 0.5px $color1-solid;
-        translate: 12px 12px;
+    @media (width <= $responsiveExtraLarge) {
+        font-size: 130px;
+    }
+
+    @media (width <= $responsiveLarge) {
+        font-size: 110px;
+    }
+
+    @media (width <= $responsiveMedium) {
+        font-size: 90px;
+    }
+
+    @media (width <= $responsiveSmall) {
+        font-size: 16vw;
     }
 }
 
-@mixin frame {
-    border-radius: $borderRadius;
-    border: $borderSize solid $color1-solid;
-    box-shadow: 0px 0px 0 0.5px $color1-solid inset;
-    transition: $animationSpeedFast;
+@mixin titleButton {
+    font-family: "ManifontGroteskBook";
+    font-size: 42px;
+    line-height: 0.9;
+    
+    &:hover {
+        color: $color3-solid;
+    }
 }
 
-@mixin frameButton {
-    &:active {
-        border-radius: $borderRadius;
-        border: $borderSize solid $color1-solid;
-        box-shadow: 6px 6px 0 0.5px $color1-solid inset;
+@mixin button {
+    font-family: "ManifontGroteskBook";
+    font-size: 32px;
+    line-height: 0.9;
+}
 
-        &>* {
-            translate: 6px 6px;
+@mixin sectionTitle {
+    font-family: "ManifontGroteskBook";
+    font-size: 50px;
+    line-height: 1;
+    color: $color2-solid;
+    margin-bottom: $spaceLarge;
+
+    & * {
+        font-family: "ManifontGroteskBook";
+        font-size: 50px;
+        line-height: 1;
+        color: $color2-solid;
+        margin-bottom: $spaceLarge;
+    }
+
+    @media (width <= $responsiveMedium) {
+        margin-bottom: $spaceMedium;
+        font-size: 40px;
+        & * { font-size: 40px; margin-bottom: $spaceMedium; }
+    } 
+
+    @media (width <= $responsiveSmall) {
+        font-size: 28px;
+        & * { font-size: 28px; }
+    }
+}
+
+@mixin sectionSmall {
+    font-family: "ManifontGroteskBook";
+    font-size: 22px;
+    line-height: 1;
+    color: $color2-solid;
+
+   & * {
+        font-family: "ManifontGroteskBook";
+        font-size: 22px;
+        line-height: 1;
+        color: $color2-solid;
+
+    }
+
+    a {
+        text-decoration: underline 1px;
+
+        &:hover {
+            color: $color3-solid;
         }
     }
-}
 
-@mixin cardPadding {
-    padding: $spaceLarge;
-}
+    @media (width <= $responsiveMedium) {
+        margin-bottom: $spaceMedium;
+        font-size: 20px;
+        & * { font-size: 20px; margin-bottom: $spaceMedium; }
+    } 
 
-@mixin fontRegular {
-    font-family: "merriweatherRegular", serif;
-
-    * {
-        font-family: "merriweatherRegular", serif;
+    @media (width <= $responsiveSmall) {
+        font-size: 14px;
+        & * { font-size: 14px; }
     }
 }
 
-@mixin fontBold {
-    font-family: "merriweatherBold", serif;
+@mixin sectionMainNumer {
+    font-family: "ManifontGroteskBook";
+    font-size: 160px;
+    line-height: 1;
+    color: $color2-solid;
 
-    * {
-        font-family: "merriweatherBold", serif;
-    }
-}
-
-@mixin fontBlack {
-    font-family: "merriweatherBlack", serif;
-
-    * {
-        font-family: "merriweatherBlack", serif;
-    }
-}
-
-@mixin fontHuge {
-    font-size: 180px;
-    transition: $animationSpeedNormal font-size;
-
-    @media (width <=$responsiveLarge) {
-        font-size: 14vw;
+    & * {
+        font-family: "ManifontGroteskBook";
+        font-size: 160px;
+        line-height: 1;
+        color: $color2-solid;
     }
 
-    * {
-        font-size: 180px;
-        transition: $animationSpeedNormal font-size;
+    @media (width <= $responsiveMedium) {
+        font-size: 140px;
+        line-height: .9;
+        & * { font-size: 140px; line-height: .9; }
+    } 
 
-        @media (width <=$responsiveLarge) {
-            font-size: 14vw;
-        }
-    }
-}
-
-@mixin fontHugeShort {
-    font-size: 180px;
-    transition: $animationSpeedNormal font-size;
-
-    @media (width <=$responsiveLarge) {
-        font-size: 24vw;
-    }
-
-    * {
-        font-size: 180px;
-        transition: $animationSpeedNormal font-size;
-
-        @media (width <=$responsiveLarge) {
-            font-size: 24vw;
-        }
-    }
-}
-
-@mixin fontParagraph {
-    font-size: 18px;
-    transition: $animationSpeedNormal font-size;
-
-    @media (width <=$responsiveSmall) {
-        font-size: 16px;
-    }
-
-    * {
-        font-size: 18px;
-        transition: $animationSpeedNormal font-size;
-
-        @media (width <=$responsiveSmall) {
-            font-size: 16px;
-        }
-    }
-}
-
-@mixin fontHeading {
-    font-size: 52px;
-    transition: $animationSpeedNormal font-size;
-
-    @media (width <=$responsiveSmall) {
-        font-size: 46px;
-    }
-
-    * {
-        font-size: 52px;
-        transition: $animationSpeedNormal font-size;
-
-        @media (width <=$responsiveSmall) {
-            font-size: 46px;
-        }
-    }
-}
-
-@mixin fontSubHeading {
-    font-size: 36px;
-    transition: $animationSpeedNormal font-size;
-
-    @media (width <=$responsiveSmall) {
-        font-size: 30px;
-    }
-
-    * {
-        font-size: 36px;
-        transition: $animationSpeedNormal font-size;
-
-        @media (width <=$responsiveSmall) {
-            font-size: 30px;
-        }
+    @media (width <= $responsiveSmall) {
+        font-size: 80px;
+        & * { font-size: 80px; }
     }
 }

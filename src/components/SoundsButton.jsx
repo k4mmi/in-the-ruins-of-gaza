@@ -16,9 +16,9 @@ export function SoundsButton() {
             soundArePlaying = !document.getElementById("sounds").paused;
 
             if ( soundArePlaying === false ) {
-                setSoundStatus("/assets/soundsOff.svg");
+                setSoundStatus("./assets/soundsOff.svg");
             } else if ( soundArePlaying === true ) {
-                setSoundStatus("/assets/soundsOn.svg");
+                setSoundStatus("./assets/soundsOn.svg");
             }
             
         }
@@ -34,12 +34,12 @@ export function SoundsButton() {
             if (soundArePlaying === false){
                 sounds.play();
                 soundArePlaying = true;
-                setSoundStatus("/assets/soundsOn.svg");
+                setSoundStatus("./assets/soundsOn.svg");
                 
             } else if (soundArePlaying === true){
                 sounds.pause();
                 soundArePlaying = false;
-                setSoundStatus("/assets/soundsOff.svg");
+                setSoundStatus("./assets/soundsOff.svg");
             }
         };
 
